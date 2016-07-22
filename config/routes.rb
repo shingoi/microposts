@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resources :microposts
   resources :relationships, only: [:create, :destroy]
+  
+  get 'following', to: 'users#following'
+  get 'followers', to: 'users#followers'
 end

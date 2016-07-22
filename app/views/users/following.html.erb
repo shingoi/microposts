@@ -1,0 +1,11 @@
+<h1>folowing users</h1>
+<% @users.each do |user| %>
+    <ul class="follow-users">
+        <li>
+            <%= link_to gravatar_for(user, size: 50), user %>
+            <span class="user"><%= link_to user.name, user %></span>
+            <p><%= user.email %></p>
+        </li>
+
+    </ul>
+<% end %>
