@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :following, :followers]
     
   def show
     # @user = User.find(params[:id]) <= before_actionで設定しているので不要
@@ -38,11 +38,15 @@ class UsersController < ApplicationController
   end
   
   def following
-    @users = current_user.following_users
+    @title = "Following Users"
+    @users = @user.following_users
+    render 'followings_followers'
   end
   
   def followers
-    @users = current_user.follower_users
+    @title = "Followers"
+    @users = @user.follower_users
+    render 'followings_followers'
   end
     
   private

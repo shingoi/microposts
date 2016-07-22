@@ -1,0 +1,31 @@
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <dl class="dl-horizontal" style="margin-left:-100px;">
+      <dt>Email</dt>
+      <dd><%= @user.email %></dd>
+      <dt>Profile</dt>
+      <dd><%= @user.profile %></dd>
+      <dt>Location</dt>
+      <dd><%= @user.location %></dd>
+    </dl>
+    
+    <div>
+      <span class="badge"><%= @user.microposts.count %></span>
+      <span class="h5"><%= link_to "Microposts", user_path %></span>
+    </div>
+    
+    <div>
+      <span class="badge"><%= @user.following_users.count %></span>
+      <span class="h5"><%= link_to "Follow", following_path(@user.id) %></span>
+    </div>
+    <div>
+      <span class="badge"><%= @user.follower_users.count %></span>
+      <span class="h5"><%= link_to "Followers", followers_path(@user.id) %></span>
+    </div>
+    
+  </aside>

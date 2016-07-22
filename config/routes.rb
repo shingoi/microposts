@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :microposts
   resources :relationships, only: [:create, :destroy]
   
-  get 'following', to: 'users#following'
-  get 'followers', to: 'users#followers'
+  get '/users/:id/following', to: 'users#following', as: 'following'
+  get '/users/:id/followers', to: 'users#followers', as: 'followers'
 end
