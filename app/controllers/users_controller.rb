@@ -51,7 +51,6 @@ class UsersController < ApplicationController
   end
   
   def like_microposts
-    @title = "いいね！ 一覧"
     @microposts = @user.like_microposts
   end
     

@@ -1,1 +1,3 @@
 $('#like-link-<%= @micropost.id %>').html("<%= escape_javascript(link_to 'いいね！', like_path(@micropost.id), method: 'post', remote: true) %>");
+$('#like-count-<%= current_user.id %>').html('<%= current_user.likes.count %>');
+$('#like-titlecount-<%= current_user.id %>').html('<%= current_user.like_microposts.count %>');

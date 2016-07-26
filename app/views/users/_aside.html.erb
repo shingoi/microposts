@@ -28,7 +28,7 @@
       <span class="h5"><%= link_to "Followers", followers_path(@user.id) %></span>
     </div>
     <div>
-      <span class="badge"><%= @user.likes.count %></span>
+      <span class="badge" id="like-count-<%= @user.id %>"><%= @user.likes.count %></span>
       <span class="h5"><%= link_to "いいね！", like_microposts_path(@user.id) %></span>
     </div>
   </aside>
