@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :following, :followers]
+  before_action :set_user, only: [:show, :edit, :update, :following, :followers,
+  :like_microposts]
     
   def show
     # @user = User.find(params[:id]) <= before_actionで設定しているので不要
@@ -47,6 +48,11 @@ class UsersController < ApplicationController
     @title = "Followers"
     @users = @user.follower_users
     render 'followings_followers'
+  end
+  
+  def like_microposts
+    @title = "いいね！ 一覧"
+    @microposts = @user.like_microposts
   end
     
   private

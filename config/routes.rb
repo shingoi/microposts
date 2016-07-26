@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   
   get '/users/:id/following', to: 'users#following', as: 'following'
   get '/users/:id/followers', to: 'users#followers', as: 'followers'
+  get '/users/:id/like_microposts', to: 'users#like_microposts', as: 'like_microposts'
+  
+  post 'like/:micropost_id', to: 'likes#like', as: 'like'
+  delete 'unlike/:micropost_id', to: 'likes#unlike', as: 'unlike'
 end

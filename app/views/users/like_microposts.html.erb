@@ -1,0 +1,11 @@
+<div class="row">
+    <%= render 'aside' %>
+    <div class="col-md-8">
+        <h3><%= @title %> (<%= @microposts.count %>) </h3>
+        <% @microposts = @microposts.page params[:page] %>
+          <ol class="microposts">
+            <%= render @microposts.page params[:page] %>
+          </ol>
+        <%= paginate @microposts %>
+    </div>
+</div>
