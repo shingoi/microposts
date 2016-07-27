@@ -18,3 +18,10 @@ ja:
       session:
         email: メールアドレス
         password: パスワード
+  views:
+    pagination:
+      first: "|<<"
+      last: ">>|"
+      previous: "<< 前ページ"
+      next: "次ページ >>"
+      truncate: "..."

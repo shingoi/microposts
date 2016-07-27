@@ -2,22 +2,22 @@
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content"><%= micropost.content %></span>
-  <span class="timestamp">
-    - <%= time_ago_in_words(micropost.created_at) %>
-  </span>
   <% if micropost.image? %>
     <%= image_tag micropost.image.url %>
   <% end %>
+  <span class="timestamp">
+    - <%= time_ago_in_words(micropost.created_at) %>
+  </span>
   <span id="like-link-<%= micropost.id %>">
     <% if current_user.likes.find_by(micropost_id: micropost.id) %>
-      <%= link_to '<i class="glyphicon glyphicon-star glyphicon-extend" aria-hidden="true"></i>'.html_safe, unlike_path(micropost.id), method: 'delete', remote: true %>
+      <%= link_to '<i class="glyphicon glyphicon-star glyphicon-extend glyphocon-star-extend" aria-hidden="true"></i>'.html_safe, unlike_path(micropost.id), method: 'delete', remote: true %>
     <% else %>
-      <%= link_to '<i class="glyphicon glyphicon-star-empty" aria-hidden="true"></i>'.html_safe, like_path(micropost.id), method: 'post', remote: true %>
+      <%= link_to '<i class="glyphicon glyphicon-star-empty glyphicon-extend" aria-hidden="true"></i>'.html_safe, like_path(micropost.id), method: 'post', remote: true %>
     <% end %>
   </span>
   <span>
     <% if current_user == micropost.user %>
-      <%= link_to '<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>'.html_safe, micropost, method: :delete,
+      <%= link_to '<i class="glyphicon glyphicon-trash glyphicon-extend" aria-hidden="true"></i>'.html_safe, micropost, method: :delete,
                                        data: { confirm: "削除しますか？" } %>
     <% end %>
   </span>
