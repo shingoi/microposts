@@ -8,9 +8,9 @@
     <dl class="dl-horizontal" style="margin-left:-100px;">
       <dt>Email</dt>
       <dd><%= @user.email %></dd>
-      <dt>Profile</dt>
+      <dt>プロフィール</dt>
       <dd><%= @user.profile %></dd>
-      <dt>Location</dt>
+      <dt>地域</dt>
       <dd><%= @user.location %></dd>
     </dl>
     
@@ -21,11 +21,11 @@
     
     <div>
       <span class="badge"><%= @user.following_users.count %></span>
-      <span class="h5"><%= link_to "Follow", following_path(@user.id) %></span>
+      <span class="h5"><%= link_to "フォロー", following_path(@user.id) %></span>
     </div>
     <div>
       <span class="badge"><%= @user.follower_users.count %></span>
-      <span class="h5"><%= link_to "Followers", followers_path(@user.id) %></span>
+      <span class="h5"><%= link_to "フォロワー", followers_path(@user.id) %></span>
     </div>
     <div>
       <span class="badge" id="like-count-<%= @user.id %>"><%= @user.likes.count %></span>

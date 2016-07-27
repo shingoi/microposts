@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Micropostへようこそ！"
       redirect_to @user
     else
       render 'new'
@@ -24,14 +24,14 @@ class UsersController < ApplicationController
   def edit
     # ログインユーザー以外ならshowへ遷移
     if current_user != @user
-      flash[:danger] = "You can't change this account"
+      flash[:danger] = "本人以外はプロフィールを変更できません"
       redirect_to @user
     end
   end
     
   def update
     if @user.update(user_params)
-      flash[:success] = "Your profile has been updated"
+      flash[:success] = "プロフィールを変更しました"
       redirect_to @user
     else
       render 'edit'
@@ -39,13 +39,13 @@ class UsersController < ApplicationController
   end
   
   def following
-    @title = "Following Users"
+    @title = "フォローユーザー"
     @users = @user.following_users
     render 'followings_followers'
   end
   
   def followers
-    @title = "Followers"
+    @title = "フォロワー"
     @users = @user.follower_users
     render 'followings_followers'
   end

@@ -1,4 +1,3 @@
-$('#like-link-<%= @micropost.id %>').html("<%= escape_javascript(link_to 'いいね！を取り消す', unlike_path(@micropost.id), method: 'delete', remote: true) %>");
+$('#like-link-<%= @micropost.id %>').html("<%= escape_javascript(link_to '<i class="glyphicon glyphicon-star" aria-hidden="true"></i>'.html_safe, unlike_path(@micropost.id), method: 'delete', remote: true) %>");
 $('#like-count-<%= current_user.id %>').html('<%= current_user.likes.count %>');
 $('#like-titlecount-<%= current_user.id %>').html('<%= current_user.like_microposts.count %>');
-
