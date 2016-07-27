@@ -3,5 +3,6 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "Micropostを投稿しよう" %>
   </div>
+  <%= f.file_field :image %>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

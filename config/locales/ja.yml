@@ -1,15 +1,20 @@
 ja:
   activerecord:
     models:
+      user:
       micropost:
     attributes:
       micropost:
         content: 本文
       user:
         name: 名前
+        email: メールアドレス
         profile: プロフィール
         location: 場所
         password: パスワード
         password_confirmation: パスワード確認
+  helpers:
+    label:
       session:
+        email: メールアドレス
         password: パスワード
