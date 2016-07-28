@@ -9,7 +9,7 @@
     - <%= time_ago_in_words(micropost.created_at) %>
   </span>
   <span id="like-link-<%= micropost.id %>">
-    <% if current_user.likes.find_by(micropost_id: micropost.id) %>
+    <% if current_user.liking?(micropost) %>
       <%= link_to '<i class="glyphicon glyphicon-star glyphicon-extend glyphocon-star-extend" aria-hidden="true"></i>'.html_safe, unlike_path(micropost.id), method: 'delete', remote: true %>
     <% else %>
       <%= link_to '<i class="glyphicon glyphicon-star-empty glyphicon-extend" aria-hidden="true"></i>'.html_safe, like_path(micropost.id), method: 'post', remote: true %>
